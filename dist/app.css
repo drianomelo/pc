@@ -120,7 +120,7 @@ body {
 .main__keyboard {
   width: 100px;
   height: 5px;
-  background-color: var(--clr-blue);
+  background-color: var(--clr-red);
   position: absolute;
   top: 48.2%;
   left: 42%;
@@ -128,9 +128,24 @@ body {
 .main__mouse {
   width: 20px;
   height: 10px;
-  background-color: var(--clr-blue);
+  background-color: var(--clr-red);
   border-radius: 12px 12px 3px 3px;
   position: absolute;
   top: 47.6%;
   left: 51%;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1140px;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.pc {
+  background-color: var(--clr-black);
+  width: 60vw;
+  height: 80vh;
 }/*# sourceMappingURL=app.css.map */
