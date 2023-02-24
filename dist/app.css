@@ -1,0 +1,33 @@
+:root {
+  --clr-bg: #ffefcc;
+  --clr-white: #fff;
+  --clr-blue: #3cc2ef;
+  --clr-blue-dark: #0074be;
+  --clr-black: #402f44;
+  --clr-black-dark: #2c222e;
+  --clr-black-opacity: #402f443f;
+  --clr-black-light: #656982;
+  --clr-gray: #6c6c6c;
+  --clr-red: #ed6077;
+  --clr-green: #60ed77;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  background-color: var(--clr-bg);
+  height: 100vh;
+  color: var(--clr-white);
+}/*# sourceMappingURL=app.css.map */
