@@ -1,0 +1,44 @@
+.main {
+  max-width: 1140px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__table {
+    background-color: var(--clr-brown);
+    width: 400px;
+    height: 15px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 95%;
+      height: 10px;
+      background-color: var(--clr-brown-dark);
+      position: absolute;
+      top: 100%;
+    }
+  }
+
+  &__foot-left,
+  &__foot-right {
+    background-color: var(--clr-brown-dark);
+    height: 160px;
+    width: 20px;
+    position: absolute;
+    top: 100%;
+  }
+
+  &__foot-left {
+    left: 5%;
+  }
+
+  &__foot-right {
+    right: 5%;
+  }
+}
