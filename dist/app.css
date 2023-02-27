@@ -9,6 +9,7 @@
   --clr-black-light: #656982;
   --clr-gray: #6c6c6c;
   --clr-red: #ed6077;
+  --clr-red-hover: #b94256;
   --clr-brown: #e6ab2d;
   --clr-brown-dark: #a87a15;
   --clr-green: #60ed77;
@@ -163,6 +164,7 @@ body {
   font-size: 1.7rem;
   font-weight: 900;
   text-transform: uppercase;
+  padding-bottom: 1rem;
 }
 .list ul {
   list-style: none;
@@ -170,6 +172,30 @@ body {
 }
 .list__item {
   width: 100%;
-  height: 30px;
-  background-color: var(--clr-black-opacity);
+  height: 50px;
+  background-color: var(--clr-black);
+  box-shadow: 0px 5px 0 var(--clr-black-dark);
+  border: 4px solid var(--clr-black-dark);
+  border-radius: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  font-weight: 700;
+}
+.list__btn {
+  width: 1.7rem;
+  height: 1.7rem;
+  background-color: var(--clr-red);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.list__btn i {
+  font-size: 0.8rem;
+  color: var(--clr-white);
+}
+.list__btn:hover {
+  background-color: var(--clr-red-hover);
 }/*# sourceMappingURL=app.css.map */
