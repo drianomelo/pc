@@ -33,13 +33,21 @@ body {
   color: var(--clr-white);
 }
 
-.main {
-  max-width: 1140px;
+.container {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  max-width: 400px;
+  height: 400px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .main__table {
   background-color: var(--clr-brown);
@@ -78,8 +86,8 @@ body {
   border: 8px solid var(--clr-black-dark);
   border-radius: 5px 5px 0 0;
   position: absolute;
-  top: 27.5%;
-  left: 56%;
+  top: 42px;
+  left: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -103,7 +111,7 @@ body {
   background-color: var(--clr-black);
   border: 8px solid var(--clr-black-dark);
   position: absolute;
-  top: 29%;
+  top: 54px;
   left: 39%;
   display: flex;
   justify-content: center;
@@ -122,8 +130,8 @@ body {
   height: 5px;
   background-color: var(--clr-red);
   position: absolute;
-  top: 48.2%;
-  left: 42%;
+  top: 187px;
+  left: 180px;
 }
 .main__mouse {
   width: 20px;
@@ -131,21 +139,6 @@ body {
   background-color: var(--clr-red);
   border-radius: 12px 12px 3px 3px;
   position: absolute;
-  top: 47.6%;
-  left: 51%;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 1140px;
-  margin: 0 auto;
-  height: 100vh;
-}
-
-.pc {
-  background-color: var(--clr-black);
-  width: 60vw;
-  height: 80vh;
+  top: 182px;
+  left: 320px;
 }/*# sourceMappingURL=app.css.map */
