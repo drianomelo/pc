@@ -3,8 +3,7 @@ const iconBtnModal = document.querySelector(".icon");
 const modal = document.querySelector(".modal");
 
 btnModal.addEventListener("click", () => {
-  console.log(btnModal.style.backgroundColor);
-  if (btnModal.style.backgroundColor === "rgb(96, 237, 119)") {
+  if (modal.style.opacity == "0") {
     modal.style.opacity = "1";
     modal.style.top = "15%";
     btnModal.style.backgroundColor = "#ed6077";
