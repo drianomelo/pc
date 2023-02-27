@@ -170,11 +170,6 @@ body {
   left: 320px;
 }
 
-@keyframes btn-animation {
-  to {
-    transform: translateY(10%);
-  }
-}
 .list {
   width: 400px;
   height: 100%;
@@ -223,4 +218,36 @@ body {
 }
 .list__btn:hover {
   background-color: var(--clr-red-hover);
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 200px;
+  padding: 2rem;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.modal__btn {
+  height: 7rem;
+  width: 7rem;
+  background: var(--clr-black);
+  border: 5px solid var(--clr-black-dark);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal__btn:first-child {
+  margin-right: 1rem;
+}
+.modal__btn:hover {
+  background-color: var(--clr-black-dark);
+}
+.modal__btn i {
+  color: var(--clr-white);
+  font-size: 4rem;
 }/*# sourceMappingURL=app.css.map */
