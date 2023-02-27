@@ -35,17 +35,17 @@
   }
 
   &__btn {
-    width: 1.7rem;
-    height: 1.7rem;
+    width: 2rem;
+    height: 2rem;
     background-color: var(--clr-red);
-    border: none;
+    border: 3px solid var(--clr-black-dark);
     border-radius: 50%;
     cursor: pointer;
     transition: all .2s;
 
     i {
       font-size: .8rem;
-      color: var(--clr-white);
+      color: var(--clr-black-dark);
     }
 
     &:hover {

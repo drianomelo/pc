@@ -7,6 +7,28 @@
   align-items: center;
   position: relative;
 
+  &__btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--clr-green);
+    border: 3px solid var(--clr-black-dark);
+    border-radius: 50%;
+    color: var(--clr-black-dark);
+    cursor: pointer;
+    position: absolute;
+    top: 270px;
+    transition: all 0.3s;
+    animation: btn-animation .5s ease-in-out infinite alternate;
+
+    i {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      background-color: var(--clr-green-hover);
+    }
+  }
+
   &__table {
     background-color: var(--clr-brown);
     width: 400px;
@@ -112,5 +134,11 @@
     position: absolute;
     top: 182px;
     left: 320px;
+  }
+}
+
+@keyframes btn-animation {
+  to {
+    transform: translateY(10%);
   }
 }
