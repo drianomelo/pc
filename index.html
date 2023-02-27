@@ -10,6 +10,7 @@
       href="https://kit.fontawesome.com/555bf53180.css"
       crossorigin="anonymous"
     />
+    <link rel="icon" href="assets/images/logo.svg">
   </head>
   <body>
     <div class="flex">
@@ -18,6 +19,7 @@
           <h2 class="list__title">Lista de Peças</h2>
           <ul>
             <li class="list__item">
+              <div class="list__checkbox"></div>
               AMD RYZEN 5 5600G
               <button class="list__btn"><i class="fa-solid fa-x"></i></button>
             </li>
@@ -26,7 +28,9 @@
       </div>
       <div class="container">
         <main class="main">
-          <button class="main__btn"><i class="fa-solid fa-plus icon"></i></button>
+          <button class="main__btn">
+            <i class="fa-solid fa-plus icon"></i>
+          </button>
           <div class="main__table">
             <div class="main__foot-left"></div>
             <div class="main__foot-right"></div>
@@ -43,11 +47,17 @@
         </div>
       </div>
     </div>
-    <div class="modal" style="opacity: 0;">
+    <div class="modal" style="opacity: 0">
       <button class="modal__btn"><i class="fa-solid fa-microchip"></i></button>
       <button class="modal__btn">
         <i class="fa-solid fa-computer-mouse"></i>
       </button>
+    </div>
+    <div class="modal-pecas">
+      <form action="">
+        <input type="text" required/>
+        <input type="submit" value="Adicionar" />
+      </form>
     </div>
     <script src="assets/js/script.js"></script>
     <script
