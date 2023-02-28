@@ -38,5 +38,19 @@
 }
 
 .modal-pecas {
-    
+  width: 400px;
+  height: 250px;
+  background-color: var(--clr-black);
+  
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  input {
+    width: 90%;
+  }
 }

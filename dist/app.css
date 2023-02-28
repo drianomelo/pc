@@ -259,4 +259,20 @@ body {
 .modal__btn i {
   color: var(--clr-white);
   font-size: 4rem;
+}
+
+.modal-pecas {
+  width: 400px;
+  height: 250px;
+  background-color: var(--clr-black);
+}
+.modal-pecas form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+.modal-pecas input {
+  width: 90%;
 }/*# sourceMappingURL=app.css.map */
