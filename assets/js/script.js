@@ -64,3 +64,12 @@ body.addEventListener("click", () => {
   modal.style.filter = "brightness(1)";
   modal.style.pointerEvents = "all";
 });
+
+const formPecas = document.querySelector("#form-pecas");
+const formPerifericos = document.querySelector("#form-perifericos");
+
+formPecas.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+  evento.target.elements['nome'].value;
+  evento.target.elements['preco'].preco;
+});
