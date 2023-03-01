@@ -48,8 +48,8 @@
       </div>
     </div>
     <div class="modal" style="opacity: 0">
-      <button class="modal__btn"><i class="fa-solid fa-microchip"></i></button>
-      <button class="modal__btn">
+      <button class="modal__btn" id="pecas"><i class="fa-solid fa-microchip"></i></button>
+      <button class="modal__btn" id="perifericos">
         <i class="fa-solid fa-computer-mouse"></i>
       </button>
     </div>
@@ -57,16 +57,16 @@
       <form action="">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" required placeholder="Digite o nome da peça" />
-        <label for="nome">Preço</label>
-        <input type="text" name="preco" id="preco"  onkeyup="formatarPreco(this);" required />
-        <input type="submit" value="Adicionar" class="btn" placeholder="0,00"/>
+        <label for="preco">Preço</label>
+        <input type="text" name="preco" id="preco"  onkeyup="formatarPreco(this);" required placeholder="0,00"/>
+        <input type="submit" value="Adicionar" class="btn" />
       </form>
     </div>
     <div class="modal-perifericos">
       <form action="">
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" required placeholder="Digite o nome do periférico"/>
-        <label for="nome">Preço</label>
+        <label for="preco">Preço</label>
         <input type="text" name="preco" id="preco" onkeyup="formatarPreco(this);" required placeholder="0,00"/>
         <input type="submit" value="Adicionar" class="btn" />
       </form>

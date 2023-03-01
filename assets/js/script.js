@@ -20,11 +20,32 @@ btnModal.addEventListener("click", () => {
 
 function formatarPreco(input) {
   // Limpa o valor digitado
-  var valor = input.value.replace(/\D/g, '');
-  
+  var valor = input.value.replace(/\D/g, "");
+
   // Formata o valor de acordo com o padrão brasileiro
-  valor = (valor / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
+  valor = (valor / 100).toLocaleString("pt-BR", { minimumFractionDigits: 2 });
 
   // Atualiza o valor no input
   input.value = valor;
 }
+
+// MODALS DE INPUT
+
+const modalPeca = document.querySelector(".modal-pecas");
+const modalPeriferico = document.querySelector(".modal-perifericos");
+const btnPeca = document.querySelector("#pecas");
+const btnPerifericos = document.querySelector("#perifericos");
+const btnAdd = document.querySelector(".btn");
+
+btnPeca.addEventListener("click", () => {
+  modalPeca.style.display = "block";
+});
+
+btnPerifericos.addEventListener("click", () => {
+  modalPeriferico.style.display = "block";
+});
+
+btnAdd.addEventListener("click", () => {
+  modalPeriferico.style.display = "none";
+  modalPeca.style.display = "none";
+});
