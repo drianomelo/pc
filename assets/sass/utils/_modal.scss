@@ -37,10 +37,18 @@
   }
 }
 
-.modal-pecas {
+.modal-pecas, .modal-perifericos {
   width: 400px;
   height: 250px;
   background-color: var(--clr-black);
+  border: 3px solid var(--clr-black-dark);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 0 var(--clr-black-dark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1024;
   
   form {
     display: flex;
@@ -52,5 +60,30 @@
 
   input {
     width: 90%;
+    border-radius: 1rem;
+    padding: .8rem;
+    border: 3px solid var(--clr-black-dark);
+    margin-bottom: 1rem;
+    outline: none;
+  }
+
+  label {
+    margin-bottom: .3rem;
+    font-weight: 700;
+    margin-right: 18rem;
+  }
+
+  .btn {
+    width: 25%;
+    margin-bottom: 0;
+    font-weight: 700;
+    background-color: var(--clr-black-dark);
+    color: var(--clr-white);
+    cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }

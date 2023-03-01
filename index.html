@@ -56,17 +56,19 @@
     <div class="modal-pecas">
       <form action="">
         <label for="nome">Nome</label>
-        <input type="text" name="nome" id="nome" required />
+        <input type="text" name="nome" id="nome" required placeholder="Digite o nome da peça" />
         <label for="nome">Preço</label>
-        <input type="number" name="preco" id="preco" required />
-        <input type="submit" value="Adicionar" />
+        <input type="text" name="preco" id="preco"  onkeyup="formatarPreco(this);" required />
+        <input type="submit" value="Adicionar" class="btn" placeholder="0,00"/>
       </form>
     </div>
     <div class="modal-perifericos">
       <form action="">
-        <input type="text" name="nome" id="nome" required />
-        <input type="text" name="preco" id="preco" required />
-        <input type="submit" value="Adicionar" />
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" required placeholder="Digite o nome do periférico"/>
+        <label for="nome">Preço</label>
+        <input type="text" name="preco" id="preco" onkeyup="formatarPreco(this);" required placeholder="0,00"/>
+        <input type="submit" value="Adicionar" class="btn" />
       </form>
     </div>
     <script src="assets/js/script.js"></script>

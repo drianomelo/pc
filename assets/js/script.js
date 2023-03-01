@@ -15,3 +15,16 @@ btnModal.addEventListener("click", () => {
     iconBtnModal.style.transform = "rotate(0)";
   }
 });
+
+//FUNÇAO PARA MASCARA DE PREÇO
+
+function formatarPreco(input) {
+  // Limpa o valor digitado
+  var valor = input.value.replace(/\D/g, '');
+  
+  // Formata o valor de acordo com o padrão brasileiro
+  valor = (valor / 100).toLocaleString('pt-BR', {minimumFractionDigits: 2});
+
+  // Atualiza o valor no input
+  input.value = valor;
+}

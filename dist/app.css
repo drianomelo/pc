@@ -261,18 +261,48 @@ body {
   font-size: 4rem;
 }
 
-.modal-pecas {
+.modal-pecas, .modal-perifericos {
   width: 400px;
   height: 250px;
   background-color: var(--clr-black);
+  border: 3px solid var(--clr-black-dark);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 0 var(--clr-black-dark);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1024;
 }
-.modal-pecas form {
+.modal-pecas form, .modal-perifericos form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
 }
-.modal-pecas input {
+.modal-pecas input, .modal-perifericos input {
   width: 90%;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  border: 3px solid var(--clr-black-dark);
+  margin-bottom: 1rem;
+  outline: none;
+}
+.modal-pecas label, .modal-perifericos label {
+  margin-bottom: 0.3rem;
+  font-weight: 700;
+  margin-right: 18rem;
+}
+.modal-pecas .btn, .modal-perifericos .btn {
+  width: 25%;
+  margin-bottom: 0;
+  font-weight: 700;
+  background-color: var(--clr-black-dark);
+  color: var(--clr-white);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.modal-pecas .btn:hover, .modal-perifericos .btn:hover {
+  transform: scale(1.1);
 }/*# sourceMappingURL=app.css.map */
