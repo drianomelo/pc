@@ -36,16 +36,31 @@ const modalPeriferico = document.querySelector(".modal-perifericos");
 const btnPeca = document.querySelector("#pecas");
 const btnPerifericos = document.querySelector("#perifericos");
 const btnAdd = document.querySelector(".btn");
+const body = document.querySelector(".flex");
 
 btnPeca.addEventListener("click", () => {
   modalPeca.style.display = "block";
+  body.style.filter = "brightness(0.4)";
+  modal.style.pointerEvents = "none";
+  modal.style.filter = "brightness(0.4)";
 });
 
 btnPerifericos.addEventListener("click", () => {
   modalPeriferico.style.display = "block";
+  body.style.filter = "brightness(0.4)";
+  modal.style.pointerEvents = "none";
+  modal.style.filter = "brightness(0.4)";
 });
 
 btnAdd.addEventListener("click", () => {
   modalPeriferico.style.display = "none";
   modalPeca.style.display = "none";
+});
+
+body.addEventListener("click", () => {
+  modalPeriferico.style.display = "none";
+  modalPeca.style.display = "none";
+  body.style.filter = "brightness(1)";
+  modal.style.filter = "brightness(1)";
+  modal.style.pointerEvents = "all";
 });

@@ -31,7 +31,6 @@ a {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  background-color: var(--clr-bg);
   color: var(--clr-white);
 }
 
@@ -39,6 +38,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: var(--clr-bg);
 }
 
 .container {
