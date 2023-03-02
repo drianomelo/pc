@@ -55,6 +55,9 @@ btnPerifericos.addEventListener("click", () => {
 btnAdd.addEventListener("click", () => {
   modalPeriferico.style.display = "none";
   modalPeca.style.display = "none";
+  body.style.filter = "brightness(1)";
+  modal.style.filter = "brightness(1)";
+  modal.style.pointerEvents = "all";
 });
 
 body.addEventListener("click", () => {
