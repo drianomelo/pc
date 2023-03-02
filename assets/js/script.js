@@ -73,6 +73,6 @@ const formPerifericos = document.querySelector("#form-perifericos");
 
 formPecas.addEventListener("submit", (evento) => {
   evento.preventDefault();
-  evento.target.elements['nome'].value;
-  evento.target.elements['preco'].preco;
+  evento.target.elements["nome"].value;
+  evento.target.elements["preco"].preco;
 });

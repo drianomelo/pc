@@ -203,14 +203,6 @@ body {
   padding: 0 1rem;
   font-weight: 700;
 }
-.list__checkbox {
-  width: 1.8rem;
-  height: 1.8rem;
-  background-color: var(--clr-white);
-  border-radius: 0.5rem;
-  border: 3px solid var(--clr-black-dark);
-  cursor: pointer;
-}
 .list__btn {
   width: 2rem;
   height: 2rem;
@@ -219,6 +211,7 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s;
+  pointer-events: all;
 }
 .list__btn i {
   font-size: 0.8rem;
