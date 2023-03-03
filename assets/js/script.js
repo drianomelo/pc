@@ -73,6 +73,16 @@ const formPerifericos = document.querySelector("#form-perifericos");
 
 formPecas.addEventListener("submit", (evento) => {
   evento.preventDefault();
-  evento.target.elements["nome"].value;
-  evento.target.elements["preco"].preco;
+
+  criaElemento(
+    evento.target.elements["nome"].value,
+    evento.target.elements["preco"].preco
+  );
 });
+
+function criaElemento(nome, quantidade) {
+  const novoItem = document.createElement("li");
+  novoItem.classList.add("list__item");
+
+  const btnFecharItem = document.createElement("button");
+}
