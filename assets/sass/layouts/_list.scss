@@ -32,6 +32,10 @@
     align-items: center;
     padding: 0 1rem;
     font-weight: 700;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
   }
 
   &__btn {
@@ -42,8 +46,7 @@
     border-radius: 50%;
     cursor: pointer;
     transition: all .2s;
-    pointer-events: all;
-
+    
     i {
       font-size: .8rem;
       color: var(--clr-black-dark);

@@ -17,12 +17,7 @@
       <div class="container">
         <div class="list">
           <h2 class="list__title">Lista de Peças</h2>
-          <ul>
-            <li class="list__item">
-              AMD RYZEN 5 5600G
-              <button class="list__btn"><i class="fa-solid fa-x"></i></button>
-            </li>
-          </ul>
+          <ul class="list__lista-pecas"></ul>
         </div>
       </div>
       <div class="container">
@@ -43,6 +38,7 @@
       <div class="container">
         <div class="list">
           <h2 class="list__title">Lista de Periféricos</h2>
+          <ul class="list__lista-perifericos"></ul>
         </div>
       </div>
     </div>
@@ -64,16 +60,7 @@
           required
           placeholder="Digite o nome da peça"
         />
-        <label for="preco">Preço</label>
-        <input
-          type="text"
-          name="preco"
-          id="preco"
-          onkeyup="formatarPreco(this);"
-          required
-          placeholder="0,00"
-        />
-        <input type="submit" value="Adicionar" class="btn" />
+        <input type="submit" value="Adicionar" class="btn-pecas" />
       </form>
     </div>
     <div class="modal-perifericos">
@@ -86,16 +73,7 @@
           required
           placeholder="Digite o nome do periférico"
         />
-        <label for="preco">Preço</label>
-        <input
-          type="text"
-          name="preco"
-          id="preco"
-          onkeyup="formatarPreco(this);"
-          required
-          placeholder="0,00"
-        />
-        <input type="submit" value="Adicionar" class="btn" />
+        <input type="submit" value="Adicionar" class="btn-perifericos" />
       </form>
     </div>
     <script src="assets/js/script.js"></script>

@@ -203,6 +203,9 @@ body {
   padding: 0 1rem;
   font-weight: 700;
 }
+.list__item:not(:last-child) {
+  margin-bottom: 1rem;
+}
 .list__btn {
   width: 2rem;
   height: 2rem;
@@ -211,7 +214,6 @@ body {
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.2s;
-  pointer-events: all;
 }
 .list__btn i {
   font-size: 0.8rem;
@@ -288,7 +290,7 @@ body {
   font-weight: 700;
   margin-right: 18rem;
 }
-.modal-pecas .btn, .modal-perifericos .btn {
+.modal-pecas .btn-pecas, .modal-pecas .btn-perifericos, .modal-perifericos .btn-pecas, .modal-perifericos .btn-perifericos {
   width: 25%;
   margin-bottom: 0;
   font-weight: 700;
@@ -297,6 +299,6 @@ body {
   cursor: pointer;
   transition: all 0.3s;
 }
-.modal-pecas .btn:hover, .modal-perifericos .btn:hover {
+.modal-pecas .btn-pecas:hover, .modal-pecas .btn-perifericos:hover, .modal-perifericos .btn-pecas:hover, .modal-perifericos .btn-perifericos:hover {
   transform: scale(1.1);
 }/*# sourceMappingURL=app.css.map */

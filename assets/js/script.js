@@ -8,6 +8,7 @@ btnModal.addEventListener("click", () => {
     modal.style.top = "15%";
     btnModal.style.backgroundColor = "#ed6077";
     iconBtnModal.style.transform = "rotate(45deg)";
+    modal.style.pointerEvents = "all";
   } else {
     modal.style.opacity = "0";
     modal.style.top = "12%";
@@ -35,7 +36,8 @@ const modalPeca = document.querySelector(".modal-pecas");
 const modalPeriferico = document.querySelector(".modal-perifericos");
 const btnPeca = document.querySelector("#pecas");
 const btnPerifericos = document.querySelector("#perifericos");
-const btnAdd = document.querySelector(".btn");
+const btnAddPecas = document.querySelector(".btn-pecas");
+const btnAddPerifericos = document.querySelector(".btn-perifericos");
 const body = document.querySelector(".flex");
 
 btnPeca.addEventListener("click", () => {
@@ -52,7 +54,15 @@ btnPerifericos.addEventListener("click", () => {
   modal.style.filter = "brightness(0.4)";
 });
 
-btnAdd.addEventListener("click", () => {
+btnAddPecas.addEventListener("click", () => {
+  modalPeriferico.style.display = "none";
+  modalPeca.style.display = "none";
+  body.style.filter = "brightness(1)";
+  modal.style.filter = "brightness(1)";
+  modal.style.pointerEvents = "all";
+});
+
+btnAddPerifericos.addEventListener("click", () => {
   modalPeriferico.style.display = "none";
   modalPeca.style.display = "none";
   body.style.filter = "brightness(1)";
@@ -73,16 +83,50 @@ const formPerifericos = document.querySelector("#form-perifericos");
 
 formPecas.addEventListener("submit", (evento) => {
   evento.preventDefault();
-
-  criaElemento(
-    evento.target.elements["nome"].value,
-    evento.target.elements["preco"].preco
-  );
+  console.log(evento);
+  criaElementoPecas(evento.target.elements["nome"].value);
 });
 
-function criaElemento(nome, quantidade) {
+formPerifericos.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+
+  criaElementoPerifericos(evento.target.elements["nome"].value);
+});
+
+function criaElementoPecas(nome) {
   const novoItem = document.createElement("li");
   novoItem.classList.add("list__item");
+  novoItem.innerHTML += nome;
 
   const btnFecharItem = document.createElement("button");
+  btnFecharItem.classList.add("list__btn");
+  const iconFechar = document.createElement("i");
+  iconFechar.classList.add("fa-solid");
+  iconFechar.classList.add("fa-xmark");
+
+  btnFecharItem.appendChild(iconFechar);
+
+  novoItem.appendChild(btnFecharItem);
+
+  const lista = document.querySelector(".list__lista-pecas");
+  lista.appendChild(novoItem);
+}
+
+function criaElementoPerifericos(nome) {
+  const novoItem = document.createElement("li");
+  novoItem.classList.add("list__item");
+  novoItem.innerHTML += nome;
+
+  const btnFecharItem = document.createElement("button");
+  btnFecharItem.classList.add("list__btn");
+  const iconFechar = document.createElement("i");
+  iconFechar.classList.add("fa-solid");
+  iconFechar.classList.add("fa-xmark");
+
+  btnFecharItem.appendChild(iconFechar);
+
+  novoItem.appendChild(btnFecharItem);
+
+  const lista = document.querySelector(".list__lista-perifericos");
+  lista.appendChild(novoItem);
 }
