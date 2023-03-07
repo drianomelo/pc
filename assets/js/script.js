@@ -81,7 +81,18 @@ body.addEventListener("click", () => {
 const formPecas = document.querySelector("#form-pecas");
 const formPerifericos = document.querySelector("#form-perifericos");
 
-const itens = JSON.parse(localStorage.getItem("itens")) || [];
+const itensPecas = JSON.parse(localStorage.getItem("itensPecas")) || [];
+
+itens.forEach((elemento) => {
+  criaElementoPecas(elemento);
+});
+
+const itensPerifericos =
+  JSON.parse(localStorage.getItem("itensPerifericos")) || [];
+
+itens.forEach((elemento) => {
+  criaElementoPerifericos(elemento);
+});
 
 formPecas.addEventListener("submit", (evento) => {
   evento.preventDefault();
@@ -106,7 +117,15 @@ formPerifericos.addEventListener("submit", (evento) => {
 
   const nome = evento.target.elements["nome"];
 
-  criaElementoPerifericos(nome.value);
+  const itemAtual = {
+    nome: nome.value,
+  };
+
+  criaElementoPerifericos(itemAtual);
+
+  itens.push(itemAtual);
+
+  localStorage.setItem("itens", JSON.stringify(itens));
 
   nome.value = "";
 });
@@ -147,12 +166,4 @@ function criaElementoPerifericos(nome) {
 
   const lista = document.querySelector(".list__lista-perifericos");
   lista.appendChild(novoItem);
-
-  const itemAtual = {
-    nome: nome,
-  };
-
-  itens.push(itemAtual);
-
-  localStorage.setItem("itens", JSON.stringify(itens));
 }
