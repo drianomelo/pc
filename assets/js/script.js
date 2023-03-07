@@ -81,12 +81,22 @@ body.addEventListener("click", () => {
 const formPecas = document.querySelector("#form-pecas");
 const formPerifericos = document.querySelector("#form-perifericos");
 
+const itens = JSON.parse(localStorage.getItem("itens")) || [];
+
 formPecas.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
   const nome = evento.target.elements["nome"];
 
-  criaElementoPecas(nome.value);
+  const itemAtual = {
+    nome: nome.value,
+  };
+
+  criaElementoPecas(itemAtual);
+
+  itens.push(itemAtual);
+
+  localStorage.setItem("itens", JSON.stringify(itens));
 
   nome.value = "";
 });
@@ -101,10 +111,10 @@ formPerifericos.addEventListener("submit", (evento) => {
   nome.value = "";
 });
 
-function criaElementoPecas(nome) {
+function criaElementoPecas(item) {
   const novoItem = document.createElement("li");
   novoItem.classList.add("list__item");
-  novoItem.innerHTML += nome;
+  novoItem.innerHTML += item.nome;
 
   const btnFecharItem = document.createElement("button");
   btnFecharItem.classList.add("list__btn");
@@ -137,4 +147,12 @@ function criaElementoPerifericos(nome) {
 
   const lista = document.querySelector(".list__lista-perifericos");
   lista.appendChild(novoItem);
+
+  const itemAtual = {
+    nome: nome,
+  };
+
+  itens.push(itemAtual);
+
+  localStorage.setItem("itens", JSON.stringify(itens));
 }
