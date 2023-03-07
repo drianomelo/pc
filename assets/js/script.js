@@ -84,21 +84,21 @@ const formPerifericos = document.querySelector("#form-perifericos");
 formPecas.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
-  const nome = evento.target.elements["nome"].value;
+  const nome = evento.target.elements["nome"];
 
   criaElementoPecas(nome.value);
 
-  nome = "";
+  nome.value = "";
 });
 
 formPerifericos.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
-  const nome = evento.target.elements["nome"].value;
+  const nome = evento.target.elements["nome"];
 
   criaElementoPerifericos(nome.value);
 
-  nome = "";
+  nome.value = "";
 });
 
 function criaElementoPecas(nome) {
