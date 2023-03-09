@@ -79,8 +79,8 @@ body.addEventListener("click", () => {
 });
 
 const formPecas = document.querySelector("#form-pecas");
-const itensPecas = JSON.parse(localStorage.getItem("list__item")) || [];
-const lista = document.querySelector(".list__lista-pecas");
+const itensPecas = JSON.parse(localStorage.getItem("list__item-pecas")) || [];
+const listaPecas = document.querySelector(".list__lista-pecas");
 
 itensPecas.forEach((elemento) => {
   criaElementoPecas(elemento);
@@ -92,14 +92,14 @@ formPecas.addEventListener("submit", (evento) => {
   const nome = evento.target.elements["nome"];
 
   const itemAtual = {
-    "nome": nome.value
+    nome: nome.value,
   };
 
   criaElementoPecas(itemAtual);
 
   itensPecas.push(itemAtual);
 
-  localStorage.setItem("list__item", JSON.stringify(itensPecas));
+  localStorage.setItem("list__item-pecas", JSON.stringify(itensPecas));
 
   nome.value = "";
 });
@@ -119,5 +119,50 @@ function criaElementoPecas(item) {
 
   novoItem.appendChild(btnFecharItem);
 
-  lista.appendChild(novoItem);
+  listaPecas.appendChild(novoItem);
+}
+
+const formPerifericos = document.querySelector("#form-perifericos");
+const itensPerifericos =
+  JSON.parse(localStorage.getItem("list__item-perifericos")) || [];
+const listaPerifericos = document.querySelector(".list__lista-perifericos");
+
+itensPerifericos.forEach((elemento) => {
+  criaElementoPerifericos(elemento);
+});
+
+formPerifericos.addEventListener("submit", (evento) => {
+  evento.preventDefault();
+
+  const nome = evento.target.elements["nome"];
+
+  const itemAtual = {
+    nome: nome.value,
+  };
+
+  criaElementoPerifericos(itemAtual);
+
+  itensPerifericos.push(itemAtual);
+
+  localStorage.setItem("list__item-perifericos", JSON.stringify(itensPerifericos));
+
+  nome.value = "";
+});
+
+function criaElementoPerifericos(item) {
+  const novoItem = document.createElement("li");
+  novoItem.classList.add("list__item");
+  novoItem.innerHTML += item.nome;
+
+  const btnFecharItem = document.createElement("button");
+  btnFecharItem.classList.add("list__btn");
+  const iconFechar = document.createElement("i");
+  iconFechar.classList.add("fa-solid");
+  iconFechar.classList.add("fa-xmark");
+
+  btnFecharItem.appendChild(iconFechar);
+
+  novoItem.appendChild(btnFecharItem);
+
+  listaPerifericos.appendChild(novoItem);
 }
