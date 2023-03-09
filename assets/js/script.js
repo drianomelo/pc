@@ -79,11 +79,11 @@ body.addEventListener("click", () => {
 });
 
 const formPecas = document.querySelector("#form-pecas");
-const itensPecas = JSON.parse(localStorage.getItem("itensPecas")) || [];
+const itensPecas = JSON.parse(localStorage.getItem("list__item")) || [];
 const lista = document.querySelector(".list__lista-pecas");
 
 itensPecas.forEach((elemento) => {
-  criaElementoPecas(elemento).nome;
+  criaElementoPecas(elemento);
 });
 
 formPecas.addEventListener("submit", (evento) => {
@@ -91,7 +91,15 @@ formPecas.addEventListener("submit", (evento) => {
 
   const nome = evento.target.elements["nome"];
 
-  criaElementoPecas(nome.value);
+  const itemAtual = {
+    "nome": nome.value
+  };
+
+  criaElementoPecas(itemAtual);
+
+  itensPecas.push(itemAtual);
+
+  localStorage.setItem("list__item", JSON.stringify(itensPecas));
 
   nome.value = "";
 });
@@ -112,12 +120,4 @@ function criaElementoPecas(item) {
   novoItem.appendChild(btnFecharItem);
 
   lista.appendChild(novoItem);
-
-  const itemAtual = {
-    nome: nome,
-  };
-
-  itensPecas.push(itemAtual);
-
-  localStorage.setItem("itens", JSON.stringify(itensPecas));
 }
