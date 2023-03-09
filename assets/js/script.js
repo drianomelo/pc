@@ -79,19 +79,11 @@ body.addEventListener("click", () => {
 });
 
 const formPecas = document.querySelector("#form-pecas");
-const formPerifericos = document.querySelector("#form-perifericos");
-
 const itensPecas = JSON.parse(localStorage.getItem("itensPecas")) || [];
+const lista = document.querySelector(".list__lista-pecas");
 
-itens.forEach((elemento) => {
-  criaElementoPecas(elemento);
-});
-
-const itensPerifericos =
-  JSON.parse(localStorage.getItem("itensPerifericos")) || [];
-
-itens.forEach((elemento) => {
-  criaElementoPerifericos(elemento);
+itensPecas.forEach((elemento) => {
+  criaElementoPecas(elemento).nome;
 });
 
 formPecas.addEventListener("submit", (evento) => {
@@ -99,33 +91,7 @@ formPecas.addEventListener("submit", (evento) => {
 
   const nome = evento.target.elements["nome"];
 
-  const itemAtual = {
-    nome: nome.value,
-  };
-
-  criaElementoPecas(itemAtual);
-
-  itens.push(itemAtual);
-
-  localStorage.setItem("itens", JSON.stringify(itens));
-
-  nome.value = "";
-});
-
-formPerifericos.addEventListener("submit", (evento) => {
-  evento.preventDefault();
-
-  const nome = evento.target.elements["nome"];
-
-  const itemAtual = {
-    nome: nome.value,
-  };
-
-  criaElementoPerifericos(itemAtual);
-
-  itens.push(itemAtual);
-
-  localStorage.setItem("itens", JSON.stringify(itens));
+  criaElementoPecas(nome.value);
 
   nome.value = "";
 });
@@ -145,25 +111,13 @@ function criaElementoPecas(item) {
 
   novoItem.appendChild(btnFecharItem);
 
-  const lista = document.querySelector(".list__lista-pecas");
   lista.appendChild(novoItem);
-}
 
-function criaElementoPerifericos(nome) {
-  const novoItem = document.createElement("li");
-  novoItem.classList.add("list__item");
-  novoItem.innerHTML += nome;
+  const itemAtual = {
+    nome: nome,
+  };
 
-  const btnFecharItem = document.createElement("button");
-  btnFecharItem.classList.add("list__btn");
-  const iconFechar = document.createElement("i");
-  iconFechar.classList.add("fa-solid");
-  iconFechar.classList.add("fa-xmark");
+  itensPecas.push(itemAtual);
 
-  btnFecharItem.appendChild(iconFechar);
-
-  novoItem.appendChild(btnFecharItem);
-
-  const lista = document.querySelector(".list__lista-perifericos");
-  lista.appendChild(novoItem);
+  localStorage.setItem("itens", JSON.stringify(itensPecas));
 }
