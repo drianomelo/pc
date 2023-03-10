@@ -18,7 +18,7 @@
     position: absolute;
     top: 270px;
     transition: all 0.3s;
-   
+
     i {
       font-size: 1.2rem;
       transition: all 0.3s;
@@ -137,3 +137,22 @@
   }
 }
 
+.logo {
+  cursor: pointer;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  img {
+    width: 50px;
+
+    &:hover {
+      animation: logo-animation 0.5s ease-in-out alternate infinite;
+    }
+  }
+}
+
+@keyframes logo-animation {
+  to {
+    transform: scale(1.1);
+  }
+}

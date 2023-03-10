@@ -170,6 +170,24 @@ body {
   left: 320px;
 }
 
+.logo {
+  cursor: pointer;
+  position: absolute;
+  top: 2%;
+  left: 2%;
+}
+.logo img {
+  width: 50px;
+}
+.logo img:hover {
+  animation: logo-animation 0.5s ease-in-out alternate infinite;
+}
+
+@keyframes logo-animation {
+  to {
+    transform: scale(1.1);
+  }
+}
 .list {
   width: 400px;
   height: 100%;
