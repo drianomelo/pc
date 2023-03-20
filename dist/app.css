@@ -242,81 +242,45 @@ body {
 }
 
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 300px;
-  height: 200px;
-  padding: 2rem;
-  position: absolute;
-  top: 13%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: all 0.5s;
-}
-.modal__btn {
-  height: 7rem;
-  width: 7rem;
-  background: var(--clr-black);
-  border: 5px solid var(--clr-black-dark);
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.3s;
-}
-.modal__btn:first-child {
-  margin-right: 2rem;
-}
-.modal__btn:hover {
-  background-color: var(--clr-black-dark);
-}
-.modal__btn i {
-  color: var(--clr-white);
-  font-size: 4rem;
-}
-
-.modal-pecas, .modal-perifericos {
-  width: 400px;
   height: 250px;
+  width: 350px;
   background-color: var(--clr-black);
-  border: 3px solid var(--clr-black-dark);
   border-radius: 1rem;
-  box-shadow: 5px 5px 0 var(--clr-black-dark);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1024;
-  display: none;
+  border: 8px solid var(--clr-black-dark);
+  box-shadow: 5px 5px 0px var(--clr-black-dark);
 }
-.modal-pecas form, .modal-perifericos form {
+.modal form {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
 }
-.modal-pecas input, .modal-perifericos input {
+.modal form label {
+  align-self: flex-start;
+  margin: 0 0 0.3rem 1.3rem;
+  font-weight: 700;
+}
+.modal form input {
   width: 90%;
+  padding: 0.6rem;
   border-radius: 1rem;
-  padding: 0.8rem;
-  border: 3px solid var(--clr-black-dark);
-  margin-bottom: 1rem;
+  border: none;
   outline: none;
+  border: 5px solid var(--clr-black-dark);
 }
-.modal-pecas label, .modal-perifericos label {
-  margin-bottom: 0.3rem;
-  font-weight: 700;
-  margin-right: 18rem;
+.modal form input:not(:last-child) {
+  margin-bottom: 1rem;
 }
-.modal-pecas .btn-pecas, .modal-pecas .btn-perifericos, .modal-perifericos .btn-pecas, .modal-perifericos .btn-perifericos {
-  width: 25%;
-  margin-bottom: 0;
-  font-weight: 700;
-  background-color: var(--clr-black-dark);
-  color: var(--clr-white);
+.modal form input:last-child {
+  width: 30%;
+  padding: 0.5rem;
+  background-color: var(--clr-green);
+  font-weight: 900;
+  color: var(--clr-black-dark);
   cursor: pointer;
   transition: all 0.3s;
 }
-.modal-pecas .btn-pecas:hover, .modal-pecas .btn-perifericos:hover, .modal-perifericos .btn-pecas:hover, .modal-perifericos .btn-perifericos:hover {
-  transform: scale(1.1);
+.modal form input:last-child:hover {
+  background-color: var(--clr-green-hover);
 }/*# sourceMappingURL=app.css.map */
