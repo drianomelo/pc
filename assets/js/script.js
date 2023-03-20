@@ -40,14 +40,26 @@ form.addEventListener("submit", (evento) => {
   const nome = evento.target.elements["nome"];
   const preco = evento.target.elements["preco"];
 
+  const existe = itens.find((elemento) => elemento.nome === nome.value);
+
   const itemAtual = {
     nome: nome.value,
     preco: preco.value,
   };
 
-  criaElemento(itemAtual);
+  if (existe) {
+    itemAtual.id = existe.id;
 
-  itens.push(itemAtual);
+    atualizaElemento(itemAtual);
+
+    itens[itens.findIndex((elemento) => elemento.id === existe.id)] = itemAtual;
+  } else {
+    itemAtual.id = itens[itens.length - 1] ? itens[itens.length - 1].id + 1 : 0;
+
+    criaElemento(itemAtual);
+
+    itens.push(itemAtual);
+  }
 
   localStorage.setItem("itens", JSON.stringify(itens));
 
@@ -59,16 +71,39 @@ function criaElemento(item) {
   const novoItem = document.createElement("li");
   novoItem.classList.add("list__item");
   novoItem.innerHTML += item.nome;
+  novoItem.dataset.id = item.id;
 
+  novoItem.appendChild(botaoDeleta(item.id));
+
+  lista.appendChild(novoItem);
+}
+
+function atualizaElemento(item) {
+  document.querySelector("[data-id='" + item.id + "']").innerHTML = item.preco;
+}
+
+function botaoDeleta(id) {
   const btnFecharItem = document.createElement("button");
   btnFecharItem.classList.add("list__btn");
   const iconFechar = document.createElement("i");
   iconFechar.classList.add("fa-solid");
   iconFechar.classList.add("fa-xmark");
-
   btnFecharItem.appendChild(iconFechar);
 
-  novoItem.appendChild(btnFecharItem);
+  btnFecharItem.addEventListener("click", function () {
+    deletaElemento(this.parentNode, id);
+  });
 
-  lista.appendChild(novoItem);
+  return btnFecharItem;
+}
+
+function deletaElemento(tag, id) {
+  tag.remove();
+
+  itens.splice(
+    itens.findIndex((elemento) => elemento.id === id),
+    1
+  );
+
+  localStorage.setItem("itens", JSON.stringify(itens));
 }
