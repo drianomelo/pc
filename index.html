@@ -39,16 +39,24 @@
         </main>
       </div>
       <div class="container">
-        <div class="modal">
+        <div class="modal" style="opacity: 0">
           <form>
             <label for="name">Nome</label>
-            <input type="text" id="name" name="name" />
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Digite o nome da peça..."
+              required
+            />
             <label for="preco">Preço</label>
             <input
               type="text"
               id="preco"
-              name="preco
-            "
+              name="preco"
+              onkeyup="formatarPreco(this);"
+              placeholder="0,00"
+              required
             />
             <input type="submit" value="Adicionar" />
           </form>

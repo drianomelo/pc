@@ -248,6 +248,7 @@ body {
   border-radius: 1rem;
   border: 8px solid var(--clr-black-dark);
   box-shadow: 5px 5px 0px var(--clr-black-dark);
+  transition: all 0.3s;
 }
 .modal form {
   height: 100%;
