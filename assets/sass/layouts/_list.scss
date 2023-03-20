@@ -38,6 +38,13 @@
     }
   }
 
+  &__preco {
+    margin-top: 1rem;
+    color: var(--clr-black-dark);
+    font-weight: 900;
+    font-size: 1.5rem;
+  }
+
   &__btn {
     width: 2rem;
     height: 2rem;

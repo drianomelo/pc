@@ -224,6 +224,12 @@ body {
 .list__item:not(:last-child) {
   margin-bottom: 1rem;
 }
+.list__preco {
+  margin-top: 1rem;
+  color: var(--clr-black-dark);
+  font-weight: 900;
+  font-size: 1.5rem;
+}
 .list__btn {
   width: 2rem;
   height: 2rem;

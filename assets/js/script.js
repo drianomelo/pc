@@ -25,33 +25,37 @@ function formatarPreco(input) {
   input.value = valor;
 }
 
-const formPecas = document.querySelector("#form-pecas");
-const itensPecas = JSON.parse(localStorage.getItem("list__item-pecas")) || [];
-const listaPecas = document.querySelector(".list__lista-pecas");
+const form = document.querySelector("#novoItem");
+const itens = JSON.parse(localStorage.getItem("itens")) || [];
+const lista = document.querySelector(".list__lista");
+const precoList = document.querySelector(".list__preco");
 
-itensPecas.forEach((elemento) => {
-  criaElementoPecas(elemento);
+itens.forEach((elemento) => {
+  criaElemento(elemento);
 });
 
-formPecas.addEventListener("submit", (evento) => {
+form.addEventListener("submit", (evento) => {
   evento.preventDefault();
 
   const nome = evento.target.elements["nome"];
+  const preco = evento.target.elements["preco"];
 
   const itemAtual = {
     nome: nome.value,
+    preco: preco.value,
   };
 
-  criaElementoPecas(itemAtual);
+  criaElemento(itemAtual);
 
-  itensPecas.push(itemAtual);
+  itens.push(itemAtual);
 
-  localStorage.setItem("list__item-pecas", JSON.stringify(itensPecas));
+  localStorage.setItem("itens", JSON.stringify(itens));
 
   nome.value = "";
+  preco.value = "";
 });
 
-function criaElementoPecas(item) {
+function criaElemento(item) {
   const novoItem = document.createElement("li");
   novoItem.classList.add("list__item");
   novoItem.innerHTML += item.nome;
@@ -66,53 +70,5 @@ function criaElementoPecas(item) {
 
   novoItem.appendChild(btnFecharItem);
 
-  listaPecas.appendChild(novoItem);
-}
-
-const formPerifericos = document.querySelector("#form-perifericos");
-const itensPerifericos =
-  JSON.parse(localStorage.getItem("list__item-perifericos")) || [];
-const listaPerifericos = document.querySelector(".list__lista-perifericos");
-
-itensPerifericos.forEach((elemento) => {
-  criaElementoPerifericos(elemento);
-});
-
-formPerifericos.addEventListener("submit", (evento) => {
-  evento.preventDefault();
-
-  const nome = evento.target.elements["nome"];
-
-  const itemAtual = {
-    nome: nome.value,
-  };
-
-  criaElementoPerifericos(itemAtual);
-
-  itensPerifericos.push(itemAtual);
-
-  localStorage.setItem(
-    "list__item-perifericos",
-    JSON.stringify(itensPerifericos)
-  );
-
-  nome.value = "";
-});
-
-function criaElementoPerifericos(item) {
-  const novoItem = document.createElement("li");
-  novoItem.classList.add("list__item");
-  novoItem.innerHTML += item.nome;
-
-  const btnFecharItem = document.createElement("button");
-  btnFecharItem.classList.add("list__btn");
-  const iconFechar = document.createElement("i");
-  iconFechar.classList.add("fa-solid");
-  iconFechar.classList.add("fa-xmark");
-
-  btnFecharItem.appendChild(iconFechar);
-
-  novoItem.appendChild(btnFecharItem);
-
-  listaPerifericos.appendChild(novoItem);
+  lista.appendChild(novoItem);
 }
